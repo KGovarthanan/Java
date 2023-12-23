@@ -16,18 +16,7 @@ stages {
         checkout scm
     }
     }
-    stage("BUILD"){
-        steps{
-            sh "mvn clean package"
-        }
-    }
-stage("test")
-{
-    steps{
-       sh "mvn test"
-       sh "ls /var/lib/jenkins/workspace/${JOB_NAME}/"
-    }
-}
+    
 stage("push image"){
     steps{
         echo "DOCKER_USR: ${DOCKER_USR}"
