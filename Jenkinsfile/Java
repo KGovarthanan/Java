@@ -25,7 +25,7 @@ stage("test")
 {
     steps{
        sh "mvn test"
-       sh "ls /var/lib/jenkins/workspace/${JOB_NAME}/webpage/target/"
+       sh "ls /var/lib/jenkins/workspace/${JOB_NAME}/"
     }
 }
 stage("push image"){
