@@ -1,31 +1,30 @@
-apiVersion: apps/V1
-kind:   Deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: tech-deploymnet
-  lables:
-     app: techapp
-     
+  name: tech-deployment
+  labels:
+    app: techapp
+
 spec:
   replicas: 1
   selector:
-    matchlabels:
+    matchLabels:
       app: techapp
 
-template:
-  metadata:
-    labels:
-      app: techapp
+  template:
+    metadata:
+      labels:
+        app: techapp
+    spec:
+      containers:
+      - name: techapp
+        image: govarthanank/gv_webapp:V1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
 
-spec:
-  containers:
-   - name: techapp
-     image: govarthanank/gv_webapp:V1
-     imagePullPolicy: Always
-    ports: 
-      - containerPort: 8080
-
-strategy:
-  type: RollingUpdate
-  rollingUpdate: 
-    maxSurge: 1
-    maxUnavailable: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
