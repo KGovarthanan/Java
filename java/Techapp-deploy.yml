@@ -19,7 +19,7 @@ template:
 spec:
   containers:
    - name: techapp
-     image: govarthanank/httpd
+     image: govarthanank/httpd:V1
      imagePullPolicy: Always
     ports: 
       - containerPort: 8080
