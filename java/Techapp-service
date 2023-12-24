@@ -1,17 +1,17 @@
-apiVersion: apps/V1
-kind:   Service
+apiVersion: apps/v1
+kind: Service
 metadata:
-  name: tech-service 
-  lables:
-     app: techapp
+  name: tech-service
+  labels:
+    app: techapp
 
 spec:
   selector:
-    matchlabels:
+    matchLabels:
       app: techapp
 
- ports: 
-        port: 8080
-      - containerPort: 8080
+  ports:
+  - port: 8080
+    targetPort: 8080
 
 type: LoadBalancer
