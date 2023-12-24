@@ -1,14 +1,13 @@
 apiVersion: apps/v1
 kind: Service
 metadata:
-  name: tech-service
+  name: techapp-service
   labels:
     app: techapp
 
 spec:
   selector:
-    matchLabels:
-      app: techapp
+     app: techapp
 
   ports:
   - port: 8080
